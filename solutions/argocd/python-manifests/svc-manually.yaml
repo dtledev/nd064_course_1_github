@@ -1,0 +1,18 @@
+# Expose as LoadBalancer Port
+apiVersion: v1
+kind: Service
+metadata:
+  creationTimestamp: null
+  labels:
+    app: python-helloworld
+  name: python-helloworld
+spec:
+  ports:
+  - port: 5000
+    protocol: TCP
+    targetPort: 5000
+  selector:
+    app: python-helloworld
+  type: LoadBalancer
+status:
+  loadBalancer: {}
